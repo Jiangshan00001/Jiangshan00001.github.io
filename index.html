@@ -23,9 +23,46 @@
 
 <h2>下载</h2>
 <ul>
-<li>源代码路径：</li>
+<li>源代码路径： https://github.com/Jiangshan00001/MZC8051</li>
 <li>exe路径：</li>
 </ul>
+
+<h2> 使用说明 </h2>
+测试：
+test_add1.c:
+#include "_simtrap.h"
+
+void main()
+{
+	char a=1;
+	char b=1;
+	char c;
+	c=a+b;
+	_sim_assert(c==2);
+	_sim_exit();
+}
+
+
+<li> 预处理：</li>
+<li>../../release/v2.1/MZC8051.exe -x cpp -i test_add1.c -o test_add1.c2  -I ../../release/v2.1/inc/c8051/  -D MZC8051V21 </li>
+<li> c语言转为ir语言： </li>
+<li> ../../release/v2.1/MZC8051.exe -x c2ir -i test_add1.c2  -o test_add1.ir </li>
+<li> ir语言转为asm汇编：</li>
+<li> ../../release/v2.1/MZC8051.exe -x ir2asm8051 -i test_add1.ir  -I ../../release/v2.1/inc/c8051/  -D MZC8051V21 -o test_add1.asm </li>
+<li> asm汇编转为hex：</li>
+<li> ../../release/v2.1/MZC8051.exe -x asm8051 -i test_add1.asm   -o test_add1.hex </li>
+<li> hex仿真执行：</li>
+<li> ../../release/v2.1/MZC8051.exe -x sim8051 -i test_add1.hex  > test_add1.ret </li>
+<li> hex反汇编：</li>
+<li>../../release/v2.1/MZC8051.exe -x dis8051 -i test_add1.hex   -o test_add1.dis </li>
+
+
+
+
+
+
+<h2>联系</h2>
+可以在项目的issues中留言。
 
 
 </body>
