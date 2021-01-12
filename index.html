@@ -30,6 +30,7 @@
 <h2> 使用说明 </h2>
 测试：
 test_add1.c:
+<code>
 #include "_simtrap.h"
 
 void main()
@@ -41,7 +42,7 @@ void main()
 	_sim_assert(c==2);
 	_sim_exit();
 }
-
+</code>
 
 <li> 预处理：</li>
 <li>../../release/v2.1/MZC8051.exe -x cpp -i test_add1.c -o test_add1.c2  -I ../../release/v2.1/inc/c8051/  -D MZC8051V21 </li>
