@@ -30,7 +30,7 @@
 <h2> 使用说明 </h2>
 测试：
 test_add1.c:
-<code>
+<pre>
 #include "_simtrap.h"
 
 void main()
@@ -42,20 +42,56 @@ void main()
 	_sim_assert(c==2);
 	_sim_exit();
 }
-</code>
+</pre>
 
-<li> 预处理：</li>
-<li>../../release/v2.1/MZC8051.exe -x cpp -i test_add1.c -o test_add1.c2  -I ../../release/v2.1/inc/c8051/  -D MZC8051V21 </li>
-<li> c语言转为ir语言： </li>
-<li> ../../release/v2.1/MZC8051.exe -x c2ir -i test_add1.c2  -o test_add1.ir </li>
-<li> ir语言转为asm汇编：</li>
-<li> ../../release/v2.1/MZC8051.exe -x ir2asm8051 -i test_add1.ir  -I ../../release/v2.1/inc/c8051/  -D MZC8051V21 -o test_add1.asm </li>
-<li> asm汇编转为hex：</li>
-<li> ../../release/v2.1/MZC8051.exe -x asm8051 -i test_add1.asm   -o test_add1.hex </li>
-<li> hex仿真执行：</li>
-<li> ../../release/v2.1/MZC8051.exe -x sim8051 -i test_add1.hex  > test_add1.ret </li>
-<li> hex反汇编：</li>
-<li>../../release/v2.1/MZC8051.exe -x dis8051 -i test_add1.hex   -o test_add1.dis </li>
+<h3> 如何使用？</h3>
+
+<pre>
+
+在windows系统下；
+打开一个命令行窗口（开始-运行-输入cmd后回车）。
+进入当前目录：cd 当前路径。
+
+创建工程：
+./MZC8051.exe -x lmake -m create -i . -o project_name
+
+编译工程：
+cd project_name;
+../MZC8051.exe -x lmake -i . -m make
+
+清理工程：
+../MZC8051.exe -x lmake -i . -m clean
+
+添加代码：
+默认代码在main.c中。
+通过修改Makefile中的SRC_C变量可以添加或删除源文件。
+</pre>
+
+
+<h3> how to use?</h3>
+<pre>
+
+in windows. 
+open cmd.
+cd to $this directiory$.
+
+create a project:
+./MZC8051.exe -x lmake -m create -i . -o project_name
+
+make project:
+cd project_name;
+../MZC8051.exe -x lmake -i . -m make
+
+clean project:
+../MZC8051.exe -x lmake -i . -m clean
+
+add code:
+default code is in main.c.
+this could be changed from modifying SRC_C var in Makefile.
+</pre>
+
+
+
 
 
 
