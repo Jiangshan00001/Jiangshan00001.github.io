@@ -10,24 +10,31 @@
 致力于实现一个开源实用的c语言单片机编译器。 <!-- <embed src="https://github.com/Jiangshan00001/MZC8051/workflows/mzc8051_ubuntu_build/badge.svg" type="image/svg+xml" width="100" height="50"  pluginspage="http://www.adobe.com/svg/viewer/install/" /> -->
 
 
-
-
+<h1>支持特性</h1>
+<h2>数据类型</h2>
+<table >
+<tr><th>类型名称</th> <th>类型宽度</th> <th>支持情况</th></tr>
+<tr><th>char</th> <th>8bits</th><th> 已支持 </th> </tr>
+<tr><th>short</th> <th>16bits</th><th> 已支持 </th> </tr>
+<tr><th>int</th> <th>16bits</th><th> 已支持 </th> </tr>
+<tr><th>long</th> <th>32bits</th><th> 已支持 </th> </tr>
+<tr><th>long long</th> <th>64bits</th> 暂未支持<th> </th> </tr>
+<tr><th>float</th> <th>32bits</th><th> 已支持 </th> </tr>
+<tr><th>double</th> <th>64bits</th><th> 暂未支持 </th> </tr>
+</table>
 
 
 <h2> 使用说明 </h2>
 测试：
 test_add1.c:
 <pre>
-#include "_simtrap.h"
-
 void main()
 {
 	char a=1;
 	char b=1;
 	char c;
 	c=a+b;
-	_sim_assert(c==2);
-	_sim_exit();
+
 }
 </pre>
 
