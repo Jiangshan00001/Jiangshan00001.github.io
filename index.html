@@ -24,54 +24,38 @@
 </table>
 
 
+<h2>下载</h2>
+
+<table border="1">
+<tr><th>项目</th><th>路径</th><th>说明</th></tr>
+<tr><th>源代码路径</th><th> <a href="https://github.com/Jiangshan00001/MZC8051">https://github.com/Jiangshan00001/MZC8051</a></th><th>说明</th></tr>
+<tr><th>win32发行版路径</th><th> <a href="https://github.com/Jiangshan00001/MZC8051/releases">https://github.com/Jiangshan00001/MZC8051/releases</a></th><th>说明</th></tr>
+</table>
+
+
+
+
 <h2> 使用说明 </h2>
-测试：
-test_add1.c:
-<pre>
-void main()
-{
-	char a=1;
-	char b=1;
-	char c;
-	c=a+b;
+下载后，在example_8051目录下，有多个例子，可以编译并通过proteus仿真测试。
+如何编译代码：
+编译使用了Makefile方式。发行版里，自带了make.exe可以用于编译。
+例如要编译example_8051\led01 里面的程序，则开启cmd。
+进入目录
+cd example_8051\led01;
+清理之前编译的文件：
+..\..\make\make.exe clean;
+编译：
+..\..\make\make.exe ;
+清理临时文件：
+..\..\make\make.exe ctmp;
 
-}
-</pre>
+例程程序仿真截图：
 
-<h3> 如何使用？</h3>
-
-<pre>
-
-在windows系统下；
-打开一个命令行窗口（开始-运行-输入cmd后回车）。
-进入当前目录：cd 当前路径。
-
-创建工程：
-./MZC8051.exe -x lmake -m create -i . -o project_name
-
-编译工程：
-cd project_name;
-../MZC8051.exe -x lmake -i . -m make
-
-清理工程：
-../MZC8051.exe -x lmake -i . -m clean
-
-添加代码：
-默认代码在main.c中。
-通过修改Makefile中的SRC_C变量可以添加或删除源文件。
-</pre>
-
-
-<h3> 示例代码</h3>
-在release中有example_test示例代码.
-
-P2.0口闪烁：<p>
-<img src="/doc/led01.gif" />
-
-<p>P2口跑马灯:<p>
-<img src="/doc/led02.gif" />
-
-
+<img src="/doc/led01_snap.png" />
+<img src="/doc/led02_snap.png" />
+<img src="/doc/shengrige01_snap.png" />
+<img src="/doc/timer0_01_snap.png" />
+<img src="/doc/key_shumaguan01_snap.png" />
 
 
 
@@ -85,12 +69,6 @@ P2.0口闪烁：<p>
 <li>lmake 简单的make的部分功能实现，用于生成项目和编译程序用。</li>
 <li>sim8051 8051的仿真代码，用于测试验证生成的hex代码运行功能是否正确。</li>
 <li>ide_one 总体编译器统一集成编译项目。</li>
-</ul>
-
-<h2>下载</h2>
-<ul>
-<li>源代码路径：<a href="https://github.com/Jiangshan00001/MZC8051">https://github.com/Jiangshan00001/MZC8051</a> </li>
-<li>exe路径： <a href="https://github.com/Jiangshan00001/MZC8051/releases">https://github.com/Jiangshan00001/MZC8051/releases</a> </li>
 </ul>
 
 
